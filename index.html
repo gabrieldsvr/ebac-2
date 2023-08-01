@@ -1,24 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Calculadora</title>
 
-    <style>
-        .tecla {
-            background-color: #2f2e2e;
-            height: 5rem;
-            width: 5rem;
-            margin: 10px 10px;
-            text-align: center;
-            font-size: 65px;
-            font-family: Verdana;
-            color: white;
-            display: inline-block;
-        }
-    </style>
+    <link href="src/css/style.css">
+
 
 </head>
+<script src="" type="text/javascript" ></script>
 <body>
 
 <div style="background-color: #606060; height: 40rem; width: 30rem; padding-top: 10px">
@@ -37,7 +27,7 @@
             <div class="tecla" onclick="teclaNumeroTela('8')">
                 8
             </div>
-            <div class="tecla" onclick="teclaOperacao('9')">
+            <div class="tecla" onclick="teclaNumeroTela('9')">
                 9
             </div>
             <div class="tecla" onclick="teclaOperacao(1)">
@@ -89,6 +79,8 @@
     </div>
 </div>
 </body>
+
+
 <script>
 
     var valor1 = null;
@@ -125,10 +117,11 @@
 
     function teclaOperacao(operacao) {
         let tela = document.getElementById('visor');
+        console.log('')
         if (!valor1) {
             valor1 = tela.innerHTML;
             tela.innerHTML = '0';
-        } else if (operacao == 0) {
+        } else if (operacao === 0) {
             teclaResult();
             tela.innerHTML = '0';
         } else {
